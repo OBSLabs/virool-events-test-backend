@@ -1,4 +1,4 @@
-== INSTRUCTIONS
+#### INSTRUCTIONS
 
 Here is a framework for a simple Rails App that, once finished, will surely impress your friends! Please clone this repo, run the migrations and seeds.rb, and modify it to do the following:
 
