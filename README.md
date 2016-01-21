@@ -1,28 +1,11 @@
-== README
+== INSTRUCTIONS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here is a framework for a simple Rails App that, once finished, will surely impress your friends! Please clone this repo, run the migrations and seeds.rb, and modify it to do the following:
 
-Things you may want to cover:
+1. When you click on "expand" on the root page, it should make a call to the server and pull the necessary data from the database for that event
+2. Once this data has been returned, the event image should expand and display it like this (feel free to style it however you'd like): https://dl.dropboxusercontent.com/spa/4v3o5uwccpb8qfz/5729rtrb.png
+3. When you click on the event name, you should be able to edit it inline, and when you click away, the name should be updated in the database.
 
-* Ruby version
+Feel free to come up with whatever solution you think is best, but this shouldn't take you more than an hour. Please don't hesitate to email tom@virool.com if you have any questions. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Good luck!
