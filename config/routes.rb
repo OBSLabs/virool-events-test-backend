@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'events/:event_id' => 'events#show'
   get 'events/:event_id/participants' => 'events#participants'
-
+  put 'events/:event_id' => 'events#update'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -11,6 +11,12 @@ class EventsController < ApplicationController
   def participants
   end
 
+  def update
+    render json: {
+      success: @event.update_attributes(params[:event].permit(:title, :description))
+    }
+  end
+
   private
   def pull_event
     @event = Event.find(params[:event_id])
