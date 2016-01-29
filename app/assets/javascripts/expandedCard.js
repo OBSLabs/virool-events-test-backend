@@ -60,8 +60,8 @@
 
   function $participants(list) {
     var $title = (list.length ? $div({
-        "class": styles.eventParticipantTitle
-      }, "Participants") : "");
+      "class": styles.eventParticipantTitle
+    }, "Participants") : "");
     var $participantsList = list.length ? $ul(
       {
         "class": styles.eventParticipants
@@ -106,6 +106,7 @@
         var description = store.events[eventNumber] ? 
           store.events[eventNumber].description : "";
         var updateUrl = "/events/" + eventNumber;
+        var crsfToken = $("meta[name=\"csrf-token\"]").attr("content");
         var body = JSON.stringify({
           title: text,
           description: description
@@ -115,7 +116,8 @@
           method: "put",
           body: body,
           headers: new Headers({
-            "X-CSRF-Token": $("meta[name=\"csrf-token\"]").attr("content"),
+            "authenticity_token": crsfToken,
+            "X-CSRF-Token": crsfToken,
             "Content-type": "application/json"
           })
         });
