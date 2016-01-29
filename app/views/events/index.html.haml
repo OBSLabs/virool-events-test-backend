@@ -3,8 +3,12 @@
     / add the "event_expanded" class to expand the block
     %li.event{data: {id: event.id}}
       .event__header{style: "background-image: url('#{event.picture_url}');"}
-        %h2.event__title
-          = event.title
+        %h2.event__h
+          %p.event__title
+            = event.title
           %button.event__show-more.js-event__show-more{type: "button"} (expand)
 
       .event__information
+
+%script
+  window._token = '#{form_authenticity_token}'
