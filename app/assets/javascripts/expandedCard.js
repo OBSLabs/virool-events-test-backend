@@ -97,6 +97,7 @@
     var _this = this;
     
     $elem.attr("contenteditable", "true");
+    $(document).off("click");
 
     $(document).on("click", function(e) {
       if (e.target !== elem) {
@@ -107,21 +108,17 @@
           store.events[eventNumber].description : "";
         var updateUrl = "/events/" + eventNumber;
         var crsfToken = $("meta[name=\"csrf-token\"]").attr("content");
-        var body = JSON.stringify({
+        var body = {
           title: text,
           description: description
+        };
+
+        $.ajax(updateUrl, {
+          method: "PUT",
+          data: body,
+          dataType: "json"
         });
 
-        fetch(updateUrl, {
-          method: "put",
-          body: body,
-          headers: new Headers({
-            "authenticity_token": crsfToken,
-            "X-CSRF-Token": crsfToken,
-            "Content-type": "application/json"
-          })
-        });
-        
         $(document).off("click");
       }
     });
