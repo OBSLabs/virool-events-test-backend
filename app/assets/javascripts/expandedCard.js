@@ -107,7 +107,6 @@
           store.events[eventNumber].description : "";
         var updateUrl = "/events/" + eventNumber;
         var body = JSON.stringify({
-          authenticity_token: window._token,
           title: text,
           description: description
         });
@@ -116,6 +115,7 @@
           method: "put",
           body: body,
           headers: new Headers({
+            "X-CSRF-Token": $("meta[name=\"csrf-token\"]").attr("content"),
             "Content-type": "application/json"
           })
         });
