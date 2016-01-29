@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
   def update
     render json: {
-      success: @event.update_attributes(params[:event].permit(:title, :description))
+      success: @event.update_attributes(params.permit(:title, :description))
     }
   end
 
